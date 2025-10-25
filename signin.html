@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign in — ATC 05SET Alumni</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-start:#2563eb;
+      --brand-end:#7c3aed;
+      --muted:#6b7280;
+      --bg:#f6f9ff;
+    }
+    html,body{height:100%;font-family:Inter,system-ui,Arial;background:var(--bg);color:#06202a;margin:0}
+    .auth-wrap{min-height:100vh;display:grid;place-items:center;padding:36px}
+    .auth-card{width:100%;max-width:980px;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 20px 50px rgba(37,99,235,0.08);display:grid;grid-template-columns:1fr;gap:0}
+    @media(min-width:992px){ .auth-card{grid-template-columns:1fr 430px} }
+    .auth-visual{background:linear-gradient(135deg,var(--brand-start),var(--brand-end));color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+    .brand-mark{width:64px;height:64px;border-radius:12px;display:grid;place-items:center;font-weight:800;background:rgba(255,255,255,0.08);font-size:20px}
+    .visual-title{font-size:1.35rem;font-weight:700}
+    .visual-sub{opacity:.95;color:rgba(255,255,255,0.9);max-width:320px}
+    .auth-form{padding:28px 26px}
+    .form-title{font-weight:700;font-size:1.125rem;margin-bottom:6px}
+    .small-muted{color:var(--muted);font-size:.92rem}
+    .social-btn{border-radius:10px;border:1px solid rgba(2,6,23,.06);min-width:120px}
+    .btn-primary-gradient{background:linear-gradient(90deg,var(--brand-start),var(--brand-end));color:#fff;border:0}
+    .divider{height:1px;background:linear-gradient(90deg,rgba(2,6,23,0.04),rgba(2,6,23,0.02));margin:18px 0}
+    .forgot-link{font-size:.92rem}
+    .top-note{font-size:.9rem;color:var(--muted)}
+    .footer-note{text-align:center;font-size:.9rem;color:var(--muted);margin-top:14px}
+  </style>
+</head>
+<body>
+
+  <main class="auth-wrap">
+    <div class="auth-card" data-aos="fade-up">
+      <!-- Visual / marketing -->
+      <aside class="auth-visual" aria-hidden="false">
+        <div class="d-flex align-items-center gap-3">
+          <div class="brand-mark">ATC</div>
+          <div>
+            <div style="font-weight:700">ATC 05SET Alumni</div>
+            <div class="small-muted">To Work Is To Pray</div>
+          </div>
+        </div>
+
+        <div class="mt-2">
+          <h2 class="visual-title">Welcome back</h2>
+          <p class="visual-sub">Sign in to access events, mentorship, giving tools and the alumni directory. Secure, quick and mobile-friendly.</p>
+        </div>
+
+        <div class="mt-auto">
+          <div class="small-muted">Not registered?</div>
+          <a href="signup.html" class="btn btn-outline-light mt-2">Create an account</a>
+        </div>
+      </aside>
+
+      <!-- Form -->
+      <section class="auth-form" aria-labelledby="signinHeading">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div>
+            <div id="signinHeading" class="form-title">Sign in</div>
+            <div class="top-note">Use your email and password to sign in</div>
+          </div>
+          <img src="images/Screenshot_2024-08-24_101330.jpg" alt="ATC logo" style="width:48px;height:48px;border-radius:10px;object-fit:cover">
+        </div>
+
+        <form id="signinForm" novalidate>
+          <div class="mb-3">
+            <label for="email" class="form-label small-muted">Email</label>
+            <input id="email" name="email" type="email" class="form-control" placeholder="you@example.com" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label small-muted">Password</label>
+            <div class="input-group">
+              <input id="password" name="password" type="password" class="form-control" minlength="8" required aria-describedby="pwHelp">
+              <button type="button" id="togglePw" class="btn btn-outline-secondary" aria-label="Show password"><i class="bi bi-eye"></i></button>
+              <div class="invalid-feedback">Password is required (min 8 characters).</div>
+            </div>
+            <div id="pwHelp" class="form-text small-muted">Minimum 8 characters.</div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="remember">
+              <label class="form-check-label small-muted" for="remember">Remember me</label>
+            </div>
+
+            <div>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#forgotModal" class="forgot-link">Forgot password?</a>
+            </div>
+          </div>
+
+          <div class="d-grid mb-3">
+            <button class="btn btn-primary-gradient btn-lg" type="submit">Sign in</button>
+          </div>
+
+          <div class="divider" role="separator" aria-hidden="true"></div>
+
+          <div class="d-flex gap-2 justify-content-center mb-2">
+            <button type="button" class="btn social-btn btn-sm"><i class="bi bi-google text-danger"></i>&nbsp;Google</button>
+            <button type="button" class="btn social-btn btn-sm"><i class="bi bi-facebook text-primary"></i>&nbsp;Facebook</button>
+            <button type="button" class="btn social-btn btn-sm"><i class="bi bi-twitter text-info"></i>&nbsp;X</button>
+          </div>
+
+          <div class="footer-note">By signing in you agree to our <a href="privacy.html">privacy policy</a> & <a href="constitution.html">constitution</a>.</div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Forgot password modal -->
+  <div class="modal fade" id="forgotModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-3">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Reset password</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small-muted">Enter the email associated with your account. We'll send a link to reset your password.</p>
+          <form id="forgotForm" class="row g-2">
+            <div class="col-12">
+              <label for="fpEmail" class="form-label small-muted">Email</label>
+              <input id="fpEmail" type="email" class="form-control" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="col-12 text-end">
+              <button type="submit" class="btn btn-primary-gradient">Send reset link</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS + AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    AOS.init({ duration:600, once:true });
+
+    // toggle password visibility
+    document.getElementById('togglePw')?.addEventListener('click', function () {
+      const pw = document.getElementById('password');
+      const icon = this.querySelector('i');
+      if (!pw) return;
+      if (pw.type === 'password') { pw.type = 'text'; icon.className = 'bi bi-eye-slash'; this.setAttribute('aria-label','Hide password'); }
+      else { pw.type = 'password'; icon.className = 'bi bi-eye'; this.setAttribute('aria-label','Show password'); }
+    });
+
+    // signin form validation (simulated)
+    (function () {
+      const form = document.getElementById('signinForm');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+
+        // simulate successful sign in (replace with real auth)
+        const btn = form.querySelector('button[type="submit"]');
+        const prev = btn.innerHTML;
+        btn.innerHTML = 'Signing in...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+          btn.innerHTML = prev;
+          btn.disabled = false;
+          // on success redirect to dashboard or home
+          window.location.href = 'index.html';
+        }, 900);
+      }, false);
+    })();
+
+    // forgot password form (simulated)
+    (function () {
+      const f = document.getElementById('forgotForm');
+      if (!f) return;
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!f.checkValidity()) { f.classList.add('was-validated'); return; }
+        const modal = bootstrap.Modal.getInstance(document.getElementById('forgotModal')) || new bootstrap.Modal(document.getElementById('forgotModal'));
+        // simulate sending
+        const btn = f.querySelector('button[type="submit"]');
+        const prev = btn.innerHTML;
+        btn.innerHTML = 'Sending...';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.innerHTML = prev;
+          btn.disabled = false;
+          modal.hide();
+          alert('Reset link sent (simulation). Check your email.');
+          f.reset();
+          f.classList.remove('was-validated');
+        }, 900);
+      });
+    })();
+  </script>
+</body>
+</html>

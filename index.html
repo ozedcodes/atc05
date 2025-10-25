@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATC 05SET Alumni</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --brand-start: #2563eb; --brand-end: #7c3aed; --muted:#6b7280; --card-bg:#ffffff; }
+    html,body { height:100%; font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto, "Helvetica Neue", Arial; background:#f7fafc; color:#0f1724; }
+    .hero {
+      background: linear-gradient(120deg, rgba(37,99,235,0.12), rgba(124,58,237,0.06));
+      padding:4.5rem 0;
+    }
+    .brand-badge { width:48px;height:48px;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800;
+      background:linear-gradient(90deg,var(--brand-start),var(--brand-end));box-shadow:0 10px 30px rgba(37,99,235,0.12); }
+    .card-hover { transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s; }
+    .card-hover:hover { transform:translateY(-6px); box-shadow: 0 18px 40px rgba(15,23,36,0.08); }
+    .stat-pill { border-radius:12px; padding:.9rem 1rem; background:var(--card-bg); box-shadow:0 8px 24px rgba(15,23,36,0.03); }
+    .gradient-cta { background:linear-gradient(90deg,var(--brand-start),var(--brand-end)); color:#fff; }
+    .glass { background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7)); backdrop-filter: blur(6px); border-radius:14px; overflow:hidden; }
+    .img-thumb { object-fit:cover; height:190px; width:100%; border-radius:10px; }
+    footer { background:#0b1220; color:#cbd5e1; }
+    .top-btn { position:fixed; right:20px; bottom:20px; z-index:1050; display:none; }
+
+    /* Mission & Vision styles */
+    .mission-section {
+      padding:3.5rem 0;
+      background: linear-gradient(180deg, rgba(37,99,235,0.04), rgba(124,58,237,0.02)); /* subtle background */
+    }
+    .mission-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; align-items:stretch; }
+    .mission-card {
+      background:var(--card-bg);
+      border-radius:12px;
+      padding:1.5rem;
+      box-shadow:0 10px 30px rgba(2,6,23,0.04);
+      display:flex;
+      flex-direction:column;
+      gap:0.75rem;
+      height:100%;
+
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+      border: 1px solid rgba(2,6,23,0.04);
+    }
+    .mission-card .icon {
+      width:56px; height:56px; border-radius:12px; display:grid; place-items:center; color:#fff;
+      background:linear-gradient(90deg,var(--brand-start),var(--brand-end));
+      box-shadow:0 8px 24px rgba(37,99,235,0.12);
+      font-size:1.25rem;
+    }
+    .mission-card h4 { margin:0; font-weight:700; }
+    .mission-card p { margin:0; color:var(--muted); line-height:1.45; }
+
+    /* Hover effect for mission cards */
+    .mission-card:hover,
+    .mission-card:focus-within {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 26px 60px rgba(2,6,23,0.12);
+      border-color: rgba(37,99,235,0.18);
+    }
+    .mission-card:focus-within { outline: none; }
+
+    /* small screens */
+    @media (max-width:767px) {
+      .mission-grid { grid-template-columns:1fr; }
+      .hero { padding:3rem 0; }
+      .brand-badge { width:44px; height:44px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-primary border-bottom sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <div class="logo"><img src="images/logo.jpg" style="width: 80px; height: 80px; border-radius: 50%;" alt=""></div>
+        <div class="d-none d-md-block">
+          <div class="fw-bold">ATC 05SET Alumni</div>
+          <small class="">Peace Unity And Progress</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Sign up</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="signin.html">Sign in</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container" style="background-image: url(images/group.jpg);">
+      <div class="row align-items-center gx-4 gy-4">
+        <div class="col-lg-6">
+          <h1 class="display-6 fw-bold color text-white">ATC 05SET — Reunite, Remember, Rebuild</h1>
+
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <a href="#events" class="btn btn-lg gradient-cta shadow-sm"><i class="bi bi-calendar-event me-2"></i> View Events</a>
+            <a href="#members" class="btn btn-lg btn-outline-secondary"><i class="bi bi-people me-2"></i> Become a Member</a>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <div class="stat-pill text-center">
+              <div class="h5 mb-0">50+</div>
+              <small class="">Registered Alumni</small>
+            </div>
+            <div class="stat-pill text-center">
+              <div class="h5 mb-0">3</div>
+              <small class="">Events Hosted</small>
+            </div>
+            <div class="stat-pill text-center">
+              <div class="h5 mb-0">₦1.2M</div>
+              <small class="">Funds Raised</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 d-flex justify-content-center">
+          <div class="glass shadow card-hover" style="max-width:520px; border-radius:20px;">
+            <img src="images/logo.jpg" alt="ATC group" class="img-fluid" style="height:360px; width:100%; background-color: transparent; object-fit:cover;">
+            <div class="p-3 d-flex justify-content-between align-items-center">
+              <div>
+                <div class="fw-bold">Annual Get-Together</div>
+                <small class="">Join the next reunion</small>
+              </div>
+              <div>
+                <button class="btn btn-sm btn-outline-primary" data-bs-target="#eventsSection" onclick="document.getElementById('events').scrollIntoView({behavior:'smooth'})">See events</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MISSION & VISION -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Our Purpose</h2>
+        <p class=" mb-0 fw-bold">What drives ATC 05SET — clear aims that guide our programs and service.</p>
+      </div>
+
+      <div class="mission-grid mt-4">
+        <div class="mission-card" data-aos="fade-up" data-aos-delay="100" tabindex="0">
+          <div class="d-flex gap-3 align-items-start">
+            <div class="icon"><i class="bi bi-bullseye"></i></div>
+            <div>
+              <h4>Our Mission</h4>
+              <p>
+              <li>To strengthen the bond of friendship and unity among members through regular engagement, transparency, and mutual support.</li>
+              <li>To promote the welfare and development of all members, offering a platform for collaboration, assistance, and empowerment.</li>
+              <li>To support and contribute to the growth of our alma mater through meaningful projects, mentorship, and partnership initiatives.</li>
+              <li>To uphold the values of excellence, integrity, and service that define the ATC spirit.</li>
+              </p>
+            </div>
+          </div>
+          <div class="mt-auto">
+            <a href="#events" class="text-decoration-none text-primary">See upcoming initiatives →</a>
+          </div>
+        </div>
+
+        <div class="mission-card" data-aos="fade-up" data-aos-delay="200" tabindex="0">
+          <div class="d-flex gap-3 align-items-start fw-bold">
+            <div class="icon"><i class="bi bi-eye"></i></div>
+            <div>
+              <h4>Vision Statement</h4>
+              <p>
+To build a united, progressive, and impactful community of ATC 05 Set members — fostering brotherhood, promoting personal and collective growth, and contributing positively to society and our alma mater.</p>
+            </div>
+          </div>
+          <div class="mt-auto">
+            <a href="#give" class="text-decoration-none text-primary">Help us achieve this vision →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events" class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-3 fw-bold">
+        <div>
+          <h3 class="mb-0">Upcoming Events</h3>
+          <small class="">Don't miss our next gatherings — RSVP to secure your spot.</small>
+        </div>
+        <a href="#events" class="text-decoration-none text-primary d-none d-sm-inline">See all events →</a>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 card-hover">
+            <img src="images/WhatsApp Image 2025-10-24 at 16.58.13_c44be335.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+              <small class="text-primary">Jan, 2026</small>
+              <h5 class="card-title mt-2">Get-Together 2025</h5>
+              <p class="card-text ">Reconnect, worship, and celebrate our achievements.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">RSVP</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 card-hover">
+            <img src="images/WhatsApp Image 2025-10-24 at 19.02.17_61c091e3.jpg" style="height: 500px;" class="card-img-top" alt="">
+            <div class="card-body">
+              <small class="text-primary">Jan 2026</small>
+              <h5 class="card-title mt-2">Get-Together</h5>
+              <p class="card-text ">Lets make this year's reunion one to remember! Dress smart, come early, and don't miss the vibe.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">RSVP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERS -->
+  <section id="members" class="py-5 bg-white">
+    <div class="container">
+      <h3>Executive Committee</h3>
+      <p class="">Meet the people serving the ATC 05SET alumni.</p>
+
+      <div class="row g-3 mt-3">
+        <div class="col-sm-6 col-md-4">
+          <div class="d-flex gap-3 align-items-center p-3 rounded-3 shadow-sm card-hover">
+            <img src="images/IMG-20250106-WA0001.jpg" alt="NP" class="rounded-circle" style="width:72px;height:72px;object-fit:cover;">
+            <div>
+              <div class="fw-semibold">Nwachukwu Promise Ozioma</div>
+              <small class="">President</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="d-flex gap-3 align-items-center p-3 rounded-3 shadow-sm card-hover">
+            <img src="images/ebuka.jpg" alt="AC" class="rounded-circle" style="width:72px;height:72px;object-fit:cover;">
+            <div>
+              <div class="fw-semibold">Akaji Chukwuebuka</div>
+              <small class="">Secretary</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="d-flex gap-3 align-items-center p-3 rounded-3 shadow-sm card-hover">
+            <img src="images/FB_IMG_1751573954980.jpg" alt="BE" class="rounded-circle" style="width:72px;height:72px;object-fit:cover;">
+            <div>
+              <div class="fw-semibold">Best Ekeanyanwu</div>
+              <small class="">Treasurer</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mt-3">
+        <div class="col-sm-6 col-md-4">
+          <div class="d-flex gap-3 align-items-center p-3 rounded-3 shadow-sm card-hover">
+            <img src="images/FB_IMG_1754984316651.jpg" alt="NP" class="rounded-circle" style="width:72px;height:72px;object-fit:cover;">
+            <div>
+              <div class="fw-semibold">Onuoha Chinedu</div>
+              <small class="">Vic-President</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="d-flex gap-3 align-items-center p-3 rounded-3 shadow-sm card-hover">
+            <img src="images/FB_IMG_1751574046726.jpg" alt="AC" class="rounded-circle" style="width:72px;height:72px;object-fit:cover;">
+            <div>
+              <div class="fw-semibold">Onuoha Patrick Obinna</div>
+              <small class="">Fin-Secretary</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="d-flex gap-3 align-items-center p-3 rounded-3 shadow-sm card-hover">
+            <img src="images/IMG_20250710_093517.jpg" alt="BE" class="rounded-circle" style="width:72px;height:72px;object-fit:cover;">
+            <div>
+              <div class="fw-semibold">Ajuzieogu Chukwuemeka</div>
+              <small class="">PRO</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <h3 class="mb-0">Gallery</h3>
+          <small class="">Snapshots from our meetings, outreaches and celebrations.</small>
+        </div>
+        <a href="gallery.html" class="text-decoration-none text-primary d-none d-sm-inline">View all photos →</a>
+      </div>
+
+      <div class="row g-3 mt-2">
+        <div class="col-6 col-md-3">
+          <img src="images/IMG_1030.JPG" class="img-thumb" alt="photo1" data-bs-toggle="modal" data-bs-target="#lightbox" data-src="images/IMG_1030.JPG">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/IMG_1042.JPG" class="img-thumb" alt="photo2" data-bs-toggle="modal" data-bs-target="#lightbox" data-src="images/IMG_1042.JPG">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/IMG_20240103_175240.jpg" class="img-thumb" alt="photo3" data-bs-toggle="modal" data-bs-target="#lightbox" data-src="images/IMG_20240103_175240.jpg">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/group.jpg" class="img-thumb" alt="photo4" data-bs-toggle="modal" data-bs-target="#lightbox" data-src="images/group.jpg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIVE (with donate modal trigger) -->
+  <section id="give" class="py-5 text-white" style="background: linear-gradient(90deg,var(--brand-start),var(--brand-end));">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h3 class="fw-bold">Support ATC 05SET Projects</h3>
+          <p class="text-white-50">Sustain our mentorship programs, scholarships and community outreach.</p>
+          <!-- changed: open account modal first -->
+          <button id="donateNowBtn" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#accountModal">
+            <i class="bi bi-heart-fill text-danger me-2"></i> Donate Now
+          </button>
+        </div>
+
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="bg-white rounded-3 p-3 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <small class="">Progress</small>
+                <div class="h5 mb-0 text-success">₦450,000 / ₦1,200,000</div>
+              </div>
+              <div style="width:160px">
+                <div class="progress" style="height:10px;">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width:38%"></div>
+                </div>
+              </div>
+            </div>
+            <p class="small  mb-0 mt-2 text-primary fw-bold">Your contribution helps run programs and scholarships for current students.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h3>Get in touch</h3>
+      <p class="">Questions about membership, events, or partnerships?</p>
+
+      <div class="row g-3 mt-3">
+        <div class="col-md-6">
+          <form class="p-4 bg-white rounded-3 shadow-sm">
+            <div class="row g-2">
+              <div class="col-12 col-md-6"><input class="form-control" placeholder="Full name" required></div>
+              <div class="col-12 col-md-6"><input class="form-control" placeholder="Email" type="email" required></div>
+            </div>
+            <div class="mt-2"><input class="form-control" placeholder="Phone" type="tel"></div>
+            <div class="mt-2"><textarea class="form-control" rows="5" placeholder="Message"></textarea></div>
+            <div class="mt-3 d-grid"><button class="btn btn-primary">Send Message</button></div>
+          </form>
+        </div>
+
+        <div class="col-md-6">
+          <div class="p-4 bg-white rounded-3 shadow-sm">
+            <h5 class="mb-1">Office</h5>
+            <p class=" mb-1">ATC — Alumni Affairs Office</p>
+            <p class=" mb-1">Email: atc05setalumni@gmail.com</p>
+            <p class=" mb-1">Phone: <br>+234 8036815380 <br>
+              +234 7036646989 <br>+234 8038697202
+            </p>
+
+            <h6 class="mt-4">Follow us</h6>
+            <div class="d-flex gap-2 mt-2">
+              <a class="btn btn-outline-secondary btn-sm" href="https://Facebook.com/atc05setalumni"><i class="bi bi-facebook me-1"></i>Facebook</a>
+              <a class="btn btn-outline-secondary btn-sm" href="#"><i class="bi bi-instagram me-1"></i>Instagram</a>
+              <a class="btn btn-outline-secondary btn-sm" href="#"><i class="bi bi-x me-1"></i>X</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <h5 class="text-white">ATC 05SET Alumni</h5>
+          <p class="small ">Peace Unity And Progress</p>
+        </div>
+
+        <div class="col-md-4">
+          <h6 class="text-white">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a class="t" href="#events">Events</a></li>
+            <li><a class="" href="members.html">Membership</a></li>
+            <li><a class="" href="gallery.html">Gallery</a></li>
+            <li><a class="" href="#give">Donate</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <h6 class="text-white">Contact</h6>
+          <p class="small  mb-0">atc05setalumni@gmail.com</p>
+          <p class="small ">+234 8036815380</p>
+        </div>
+      </div>
+
+      <div class="text-center small  mt-4">© 2025 ATC 05SET Alumni. All rights reserved.
+        <p>website by Ozedinnovations</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="btn btn-primary rounded-circle top-btn" id="backTop" title="Back to top"><i class="bi bi-chevron-up"></i></button>
+
+  <!-- Lightbox modal for gallery -->
+  <div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0">
+          <img id="lightboxImg" src="" class="w-100 rounded" alt="Preview">
+        </div>
+        <div class="modal-footer border-0 justify-content-center">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donate modal -->
+  <div class="modal fade" id="donateModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Support ATC 05SET</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="modal-body">
+          <label class="form-label small">Amount (₦)</label>
+          <input type="number" class="form-control mb-2" placeholder="5000" required>
+          <label class="form-label small">Payment Method</label>
+          <select class="form-select mb-3">
+            <option>Card</option>
+            <option>Transfer</option>
+            <option>USSD</option>
+          </select>
+          <div class="d-grid">
+            <button class="btn gradient-cta">Proceed to Pay</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Account details modal (added) -->
+  <div class="modal fade" id="accountModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Give — Bank Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <p class="mb-2 text-muted">Use the account below to transfer or pay. Tap "Copy" to copy the account number.</p>
+
+          <div class="bg-light rounded-3 p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="small text-muted">Bank</div>
+                <div class="fw-semibold">Zenith Bank</div>
+              </div>
+
+              <div class="text-end">
+                <div class="small text-muted">Account name</div>
+                <div class="fw-semibold">Ahiara Tech Coll Old Student Asso 05Set</div>
+              </div>
+            </div>
+
+            <hr class="my-3">
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="small text-muted">Account number</div>
+                <div id="acctNumber" class="h5 fw-bold">1310792744</div>
+              </div>
+
+              <div class="d-flex gap-2">
+                <button id="copyAccount" type="button" class="btn btn-outline-secondary">Copy</button>
+                <button id="proceedToPay" type="button" class="btn gradient-cta">Proceed to Pay</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="small text-muted">After payment, you can also use the donate form for receipts and confirmations.</div>
+        </div>
+
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    // smooth scroll for in-page links and collapse nav on mobile
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+        const navCollapse = document.querySelector('.navbar-collapse');
+        if (navCollapse && navCollapse.classList.contains('show')) {
+          bootstrap.Collapse.getInstance(navCollapse)?.hide();
+        }
+      });
+    });
+
+    // gallery lightbox
+    document.querySelectorAll('[data-bs-target="#lightbox"]').forEach(img => {
+      img.addEventListener('click', (e) => {
+        const src = img.getAttribute('data-src') || img.src;
+        document.getElementById('lightboxImg').src = src;
+      });
+    });
+
+    // back to top button
+    const backBtn = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) backBtn.style.display = 'block'; else backBtn.style.display = 'none';
+    });
+    backBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+    /* js/scripts.js
+   Small, dependency-free helpers:
+   - mobile menu toggle
+   - highlight active nav item
+   - smooth scroll for anchors
+   - simple client-side form validation
+   - lightweight gallery lightbox
+*/
+
+document.addEventListener('DOMContentLoaded', function () {
+  // MOBILE MENU TOGGLE
+  // Create a mobile toggle button dynamically if nav exists
+  const headerInner = document.querySelector('.header-inner');
+  const nav = document.querySelector('.main-nav');
+  if (headerInner && nav) {
+    const btn = document.createElement('button');
+    btn.className = 'mobile-menu-toggle';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<span class="sr-only">Menu</span>☰';
+    btn.style.cssText = 'font-size:18px;padding:8px 10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);background:#fff';
+    headerInner.insertBefore(btn, headerInner.children[1]);
+
+    btn.addEventListener('click', function () {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+      if (nav.classList.contains('open')) {
+        nav.style.maxHeight = nav.scrollHeight + 'px';
+      } else {
+        nav.style.maxHeight = null;
+      }
+    });
+
+    // close menu on resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900 && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        nav.style.maxHeight = null;
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // ACTIVE NAV LINK (based on filename)
+  try {
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.main-nav li').forEach(li => {
+      const a = li.querySelector('a');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      if (!href) return;
+      // compare filenames only
+      const hrefFile = href.split('/').pop();
+      if (hrefFile === path) {
+        li.classList.add('active');
+      } else {
+        li.classList.remove('active');
+      }
+    });
+  } catch (e) {
+    console.warn('active nav script error', e);
+  }
+
+  // SMOOTH SCROLL for same-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function (evt) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        evt.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // SIMPLE FORM VALIDATION (signup & login)
+  function attachValidation(formSelector) {
+    const form = document.querySelector(formSelector);
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      const required = form.querySelectorAll('[required]');
+      let ok = true;
+      required.forEach(el => {
+        el.classList.remove('invalid');
+        if (!el.value || el.value.trim() === '') {
+          ok = false;
+          el.classList.add('invalid');
+        }
+      });
+
+      // example: password match on signup (fields named password and password2)
+      const p1 = form.querySelector('input[name="password"]');
+      const p2 = form.querySelector('input[name="password2"]');
+      if (p1 && p2) {
+        if (p1.value !== p2.value) {
+          ok = false;
+          p1.classList.add('invalid');
+          p2.classList.add('invalid');
+          alert('Passwords do not match.');
+        }
+      }
+
+      if (!ok) {
+        e.preventDefault();
+        // subtle UI: focus first invalid
+        const firstInvalid = form.querySelector('.invalid');
+        if (firstInvalid) firstInvalid.focus();
+      }
+    });
+  }
+
+  attachValidation('form');          // covers contact + auth forms by default
+  attachValidation('.contact-form form');
+
+  // LIGHTBOX (very small)
+  const galleryImages = document.querySelectorAll('.gallery-grid img, .gallery-grid .photo img, .media-card img, .team-card img');
+  if (galleryImages.length) {
+    const lightbox = document.createElement('div');
+    lightbox.id = 'simple-lightbox';
+    lightbox.style.cssText = 'position:fixed;inset:0;background:rgba(7,10,30,0.8);display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;visibility:hidden;transition:opacity .18s ease';
+    lightbox.innerHTML = '<img style="max-width:92%;max-height:86%;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.6)" src="" alt="lightbox"><button aria-label="close" style="position:absolute;top:28px;right:28px;background:transparent;border:none;color:#fff;font-size:26px;cursor:pointer">✕</button>';
+    document.body.appendChild(lightbox);
+
+    const lbImg = lightbox.querySelector('img');
+    const closeBtn = lightbox.querySelector('button');
+
+    galleryImages.forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lightbox.style.opacity = '1';
+        lightbox.style.visibility = 'visible';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.opacity = '0';
+      lightbox.style.visibility = 'hidden';
+    }
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (evt) => { if (evt.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+  }
+
+  // small accessibility helper: add .sr-only styles if not present
+  if (!document.querySelector('.sr-only-style')) {
+    const style = document.createElement('style');
+    style.className = 'sr-only-style';
+    style.innerHTML = `.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}`;
+    document.head.appendChild(style);
+  }
+
+  // Initialize AOS (Animate On Scroll)
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out-cubic',
+    once: true
+  });
+});
+
+  </script>
+
+  <!-- NEW: account modal helper (added) -->
+  <script>
+    // copy account number to clipboard and give feedback
+    document.getElementById('copyAccount')?.addEventListener('click', async function () {
+      const btn = this;
+      const acctEl = document.getElementById('acctNumber');
+      if (!acctEl || !navigator.clipboard) return;
+      try {
+        await navigator.clipboard.writeText(acctEl.textContent.trim());
+        const prev = btn.innerHTML;
+        btn.innerHTML = 'Copied';
+        btn.classList.add('btn-success');
+        setTimeout(() => { btn.innerHTML = prev; btn.classList.remove('btn-success'); }, 1400);
+      } catch (err) {
+        btn.innerHTML = 'Copy failed';
+        setTimeout(() => btn.innerHTML = 'Copy', 1400);
+      }
+    });
+
+    // "Proceed to Pay" hides account modal and opens donate modal
+    document.getElementById('proceedToPay')?.addEventListener('click', function () {
+      const acctModalEl = document.getElementById('accountModal');
+      const donateModalEl = document.getElementById('donateModal');
+      if (acctModalEl) {
+        const acctModal = bootstrap.Modal.getInstance(acctModalEl) || new bootstrap.Modal(acctModalEl);
+        acctModal.hide();
+      }
+      if (donateModalEl) {
+        const donateModal = new bootstrap.Modal(donateModalEl);
+        donateModal.show();
+      }
+    });
+
+    // Optional: if you want to dynamically populate account details in future,
+    // you can set the textContent of #acctNumber via JS before showing the modal.
+  </script>
+</body>
+</html>
