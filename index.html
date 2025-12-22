@@ -18,29 +18,85 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root { --brand-start: #2563eb; --brand-end: #7c3aed; --muted:#6b7280; --card-bg:#ffffff; }
-    html,body { height:100%; font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto, "Helvetica Neue", Arial; background:#f7fafc; color:#0f1724; }
+    :root {
+      --brand-start: #2563eb;
+      --brand-end: #7c3aed;
+      --muted:#6b7280;
+      --card-bg:#ffffff;
+    }
+    html,body {
+      height:100%;
+      font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto, "Helvetica Neue", Arial;
+      background:#f7fafc;
+      color:#0f1724;
+    }
     .hero {
       background: linear-gradient(120deg, rgba(37,99,235,0.12), rgba(124,58,237,0.06));
       padding:4.5rem 0;
     }
-    .brand-badge { width:48px;height:48px;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800;
-      background:linear-gradient(90deg,var(--brand-start),var(--brand-end));box-shadow:0 10px 30px rgba(37,99,235,0.12); }
-    .card-hover { transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s; }
-    .card-hover:hover { transform:translateY(-6px); box-shadow: 0 18px 40px rgba(15,23,36,0.08); }
-    .stat-pill { border-radius:12px; padding:.9rem 1rem; background:var(--card-bg); box-shadow:0 8px 24px rgba(15,23,36,0.03); }
-    .gradient-cta { background:linear-gradient(90deg,var(--brand-start),var(--brand-end)); color:#fff; }
-    .glass { background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7)); backdrop-filter: blur(6px); border-radius:14px; overflow:hidden; }
-    .img-thumb { object-fit:cover; height:190px; width:100%; border-radius:10px; }
-    footer { background:#0b1220; color:#cbd5e1; }
-    .top-btn { position:fixed; right:20px; bottom:20px; z-index:1050; display:none; }
+    .brand-badge {
+      width:48px;
+      height:48px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-weight:800;
+      background:linear-gradient(90deg,var(--brand-start),var(--brand-end));
+      box-shadow:0 10px 30px rgba(37,99,235,0.12);
+    }
+    .card-hover {
+      transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s;
+    }
+    .card-hover:hover {
+      transform:translateY(-6px);
+      box-shadow: 0 18px 40px rgba(15,23,36,0.08);
+    }
+    .stat-pill {
+      border-radius:12px;
+      padding:.9rem 1rem;
+      background:var(--card-bg);
+      box-shadow:0 8px 24px rgba(15,23,36,0.03);
+    }
+    .gradient-cta {
+      background:linear-gradient(90deg,var(--brand-start),var(--brand-end));
+      color:#fff;
+    }
+    .glass {
+      background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
+      backdrop-filter: blur(6px);
+      border-radius:14px;
+      overflow:hidden;
+    }
+    .img-thumb {
+      object-fit:cover;
+      height:190px;
+      width:100%;
+      border-radius:10px;
+    }
+    footer {
+      background:#0b1220;
+      color:#cbd5e1;
+    }
+    .top-btn {
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:1050;
+      display:none;
+    }
 
     /* Mission & Vision styles */
     .mission-section {
       padding:3.5rem 0;
       background: linear-gradient(180deg, rgba(37,99,235,0.04), rgba(124,58,237,0.02)); /* subtle background */
     }
-    .mission-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; align-items:stretch; }
+    .mission-grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1.25rem;
+      align-items:stretch;
+    }
     .mission-card {
       background:var(--card-bg);
       border-radius:12px;
@@ -55,13 +111,25 @@
       border: 1px solid rgba(2,6,23,0.04);
     }
     .mission-card .icon {
-      width:56px; height:56px; border-radius:12px; display:grid; place-items:center; color:#fff;
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      color:#fff;
       background:linear-gradient(90deg,var(--brand-start),var(--brand-end));
       box-shadow:0 8px 24px rgba(37,99,235,0.12);
       font-size:1.25rem;
     }
-    .mission-card h4 { margin:0; font-weight:700; }
-    .mission-card p { margin:0; color:var(--muted); line-height:1.45; }
+    .mission-card h4 {
+      margin:0;
+      font-weight:700;
+    }
+    .mission-card p {
+      margin:0;
+      color:var(--muted);
+      line-height:1.45;
+    }
 
     /* Hover effect for mission cards */
     .mission-card:hover,
@@ -70,13 +138,22 @@
       box-shadow: 0 26px 60px rgba(2,6,23,0.12);
       border-color: rgba(37,99,235,0.18);
     }
-    .mission-card:focus-within { outline: none; }
+    .mission-card:focus-within {
+      outline: none;
+    }
 
     /* small screens */
     @media (max-width:767px) {
-      .mission-grid { grid-template-columns:1fr; }
-      .hero { padding:3rem 0; }
-      .brand-badge { width:44px; height:44px; }
+      .mission-grid {
+        grid-template-columns:1fr;
+      }
+      .hero {
+        padding:3rem 0;
+      }
+      .brand-badge {
+        width:44px;
+        height:44px;
+      }
     }
   </style>
 </head>
@@ -372,6 +449,69 @@ To build a united, progressive, and impactful community of ATC 05 Set members â€
       </div>
     </div>
   </section>
+  <section style="background-color: #fffaf0; padding: 60px 20px;">
+  <div style="max-width: 1100px; margin:; text-align: center;">
+    <h3 style="font-size: 2rem; color: #2c3e50; margin-bottom: 10px;">Notable Alumni</h3>
+    <p style="font-size: 1.1rem; color: #555; max-width: 800px; margin: 0 40px;">
+      Meet some of our proudest success stories â€” alumni who have made outstanding contributions in their fields.
+    </p>
+
+    <!-- Alumni Carousel -->
+    <div id="alumniCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 350px; margin: 0;">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/IMG-20240525-WA0002.jpg" alt="Alumni 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366; color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Engr. Dike Udodiri</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>President at Roxotech Engineering Services Ltd.rical Engineer/Undertakes the construction of powerlines (High Tension & Low Tension) Transformer Substation Installation of all kind, Transformer Repairs, Domestic/Industrial Installation ofricity etc.</b></p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/IMG-20250320-WA0012.jpg" alt="Alumni 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Engr. Chikwe Augustine</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>A seasonedmobile importer specializing in all kinds of premium German motors. with years of experience in sourcing, importing, and delivering top-quality vehicles, he is committed to bringing reliability, class, and excellence to every customer.</b></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/IMG_20250822_082903.jpg" alt="Alumni 4" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Mr Faustinus Enwere</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>A dynamic entrepreneur and vissionary business leader. He is the CEO of VickInvestment Mozambique and Tinus Hotels Ltd, where he drives growth through strategic investments, hospitality excellence, and a passion for creating lasting value across industries.</b></p>
+          </div>
+        </div>
+                <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/FB_IMG_1751574196114.jpg" alt="Alumni 4" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Arc. Uzodimma Victor</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>CEO Uzo-Vic Architectural and Building Ventures Nig. Specialise on all kinds of ultra modern Architectural designs, survaying works Drilling of boreholes and Building construction.</b></p>
+          </div>
+        </div>
+                <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/IMG-20250106-WA0001.jpg" alt="Alumni 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Engr. Nwachukwu Ozioma</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>Passionate Tech entrepreneur with a deep love for technology, design, and spiritual growth. CEO of OzedInnovations.</b></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/ben3.jpg" alt="Alumni 5" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Engr. Benneth Okoro </h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>CEO @ Bencorical Services, a trusted name inrical solutions. With expertise in modernrical system and passion for excellence. <i> Akukaria Nke Mbu Na Germany.</i></b></p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#alumniCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#alumniCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contact" class="py-5">
@@ -545,84 +685,7 @@ To build a united, progressive, and impactful community of ATC 05 Set members â€
   <script>
     // smooth scroll for in-page links and collapse nav on mobile
     document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const href = a.getAttribute('href');
-        if (href.length > 1) {
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-        const navCollapse = document.querySelector('.navbar-collapse');
-        if (navCollapse && navCollapse.classList.contains('show')) {
-          bootstrap.Collapse.getInstance(navCollapse)?.hide();
-        }
-      });
-    });
-
-    // gallery lightbox
-    document.querySelectorAll('[data-bs-target="#lightbox"]').forEach(img => {
-      img.addEventListener('click', (e) => {
-        const src = img.getAttribute('data-src') || img.src;
-        document.getElementById('lightboxImg').src = src;
-      });
-    });
-
-    // back to top button
-    const backBtn = document.getElementById('backTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) backBtn.style.display = 'block'; else backBtn.style.display = 'none';
-    });
-    backBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
-
-    /* js/scripts.js
-   Small, dependency-free helpers:
-   - mobile menu toggle
-   - highlight active nav item
-   - smooth scroll for anchors
-   - simple client-side form validation
-   - lightweight gallery lightbox
-*/
-
-document.addEventListener('DOMContentLoaded', function () {
-  // MOBILE MENU TOGGLE
-  // Create a mobile toggle button dynamically if nav exists
-  const headerInner = document.querySelector('.header-inner');
-  const nav = document.querySelector('.main-nav');
-  if (headerInner && nav) {
-    const btn = document.createElement('button');
-    btn.className = 'mobile-menu-toggle';
-    btn.setAttribute('aria-expanded', 'false');
-    btn.innerHTML = '<span class="sr-only">Menu</span>â˜°';
-    btn.style.cssText = 'font-size:18px;padding:8px 10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);background:#fff';
-    headerInner.insertBefore(btn, headerInner.children[1]);
-
-    btn.addEventListener('click', function () {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
-      if (nav.classList.contains('open')) {
-        nav.style.maxHeight = nav.scrollHeight + 'px';
-      } else {
-        nav.style.maxHeight = null;
-      }
-    });
-
-    // close menu on resize
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 900 && nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        nav.style.maxHeight = null;
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // ACTIVE NAV LINK (based on filename)
-  try {
-    const path = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.main-nav li').forEach(li => {
+      a.addEventListener('click', (e)
       const a = li.querySelector('a');
       if (!a) return;
       const href = a.getAttribute('href');
