@@ -128,18 +128,31 @@
     .mission-card p {
       margin:0;
       color:var(--muted);
-      line-height:1.45;
+      line-height:1.7;
+    }
+
+    .mission-list {
+      margin:0;
+      padding-left:1.25rem;
+      color:var(--muted);
+      line-height:1.75;
+      list-style-type:disc;
+    }
+    .mission-list li {
+      margin-bottom:0.75rem;
+      font-size:0.95rem;
     }
 
     /* Hover effect for mission cards */
     .mission-card:hover,
     .mission-card:focus-within {
-      transform: translateY(-8px) scale(1.01);
+      transform: translateY(-8px);
       box-shadow: 0 26px 60px rgba(2,6,23,0.12);
       border-color: rgba(37,99,235,0.18);
     }
     .mission-card:focus-within {
       outline: none;
+      ring: 2px solid var(--brand-start);
     }
 
     /* small screens */
@@ -187,7 +200,7 @@
       </div>
     </div>
   </nav>
-  <marquee behavior="" direction="left">2025 Get-Together, date 3rd Jan 2026. Venue: Engr. Benneth Okoro's Residence (BACK OF ST. PAULS CATHOLIC CHURCH SMALL GATE OGBENNESII)</marquee>
+  <marquee behavior="" direction="left">Reconnecting Old Bonds, Building a strong ATC05SET</marquee>
 
   <!-- HERO -->
   <header id="home" class="hero">
@@ -207,7 +220,7 @@
               <small class="">Registered Alumni</small>
             </div>
             <div class="stat-pill text-center">
-              <div class="h5 mb-0">3</div>
+              <div class="h5 mb-0">4</div>
               <small class="">Events Hosted</small>
             </div>
             <div class="stat-pill text-center">
@@ -236,44 +249,83 @@
   </header>
 
   <!-- MISSION & VISION -->
-  <section class="mission-section">
+  <section id="mission-vision" class="mission-section" aria-labelledby="purpose-heading">
     <div class="container">
-      <div class="text-center mb-4">
-        <h2 class="fw-bold">Our Purpose</h2>
-        <p class=" mb-0 fw-bold">What drives ATC 05SET — clear aims that guide our programs and service.</p>
+      <div class="text-center mb-5">
+        <h2 id="purpose-heading" class="fw-bold display-6">Our Mission & Vision</h2>
+        <p class="lead mb-0" style="color:var(--muted);">What we stand for and where we're headed as a community.</p>
       </div>
 
-      <div class="mission-grid mt-4">
-        <div class="mission-card" data-aos="fade-up" data-aos-delay="100" tabindex="0">
-          <div class="d-flex gap-3 align-items-start">
-            <div class="icon"><i class="bi bi-bullseye"></i></div>
-            <div>
-              <h4>Our Mission</h4>
-              <p>
-              <li>To strengthen the bond of friendship and unity among members through regular engagement, transparency, and mutual support.</li>
-              <li>To promote the welfare and development of all members, offering a platform for collaboration, assistance, and empowerment.</li>
-              <li>To support and contribute to the growth of our alma mater through meaningful projects, mentorship, and partnership initiatives.</li>
-              <li>To uphold the values of excellence, integrity, and service that define the ATC spirit.</li>
-              </p>
+      <div class="row g-4 align-items-stretch">
+        <!-- MISSION CARD -->
+        <div class="col-lg-6">
+          <article class="mission-card h-100" role="region" aria-labelledby="mission-heading" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-flex gap-3 mb-3">
+              <div class="icon" aria-hidden="true"><i class="bi bi-target"></i></div>
+              <div>
+                <h3 id="mission-heading" class="h5 mb-0">Our Mission</h3>
+              </div>
             </div>
-          </div>
-          <div class="mt-auto">
-            <a href="#events" class="text-decoration-none text-primary">See upcoming initiatives →</a>
-          </div>
+
+            <div class="ps-0 ps-md-5">
+              <ul class="mission-list">
+                <li>Strengthen bonds of friendship and unity through transparent engagement and mutual support</li>
+                <li>Promote member welfare and development via collaboration and empowerment platforms</li>
+                <li>Support our alma mater with meaningful projects, mentorship, and partnerships</li>
+                <li>Uphold excellence, integrity, and service—the foundation of the ATC spirit</li>
+              </ul>
+            </div>
+
+            <div class="mt-4 d-flex gap-2">
+              <a href="#members" class="btn btn-sm btn-outline-primary" aria-label="Join our membership program">Join Membership</a>
+              <a href="#events" class="btn btn-sm btn-link text-decoration-none">View Events →</a>
+            </div>
+          </article>
         </div>
 
-        <div class="mission-card" data-aos="fade-up" data-aos-delay="200" tabindex="0">
-          <div class="d-flex gap-3 align-items-start fw-bold">
-            <div class="icon"><i class="bi bi-eye"></i></div>
-            <div>
-              <h4>Vision Statement</h4>
-              <p>
-To build a united, progressive, and impactful community of ATC 05 Set members — fostering brotherhood, promoting personal and collective growth, and contributing positively to society and our alma mater.</p>
+        <!-- VISION CARD -->
+        <div class="col-lg-6">
+          <article class="mission-card h-100" role="region" aria-labelledby="vision-heading" data-aos="fade-up" data-aos-delay="200">
+            <div class="d-flex gap-3 mb-3">
+              <div class="icon" aria-hidden="true"><i class="bi bi-binoculars"></i></div>
+              <div>
+                <h3 id="vision-heading" class="h5 mb-0">Our Vision</h3>
+              </div>
             </div>
-          </div>
-          <div class="mt-auto">
-            <a href="#give" class="text-decoration-none text-primary">Help us achieve this vision →</a>
-          </div>
+
+            <div class="ps-0 ps-md-5">
+              <p class="mb-3" style="color:var(--muted);line-height:1.7;">
+                To build a united, progressive, and impactful community of ATC 05 Set alumni—fostering deep brotherhood, promoting personal and collective growth, and contributing meaningfully to society and our alma mater.
+              </p>
+              <p class="small" style="color:var(--muted);">
+                We envision a legacy of continuous impact, where every member thrives and our collective efforts create lasting positive change.
+              </p>
+            </div>
+
+            <div class="mt-4 d-flex gap-2">
+              <a href="#give" class="btn btn-sm btn-outline-primary" aria-label="Support our initiatives">Support Us</a>
+              <a href="#contact" class="btn btn-sm btn-link text-decoration-none">Get Involved →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Core Values Banner (Optional) -->
+      <div class="row g-3 mt-5 pt-4 border-top border-light">
+        <div class="col-md-4 text-center">
+          <div class="mb-2"><i class="bi bi-heart-fill" style="font-size:1.8rem;color:var(--brand-start);"></i></div>
+          <h6 class="fw-semibold">Brotherhood</h6>
+          <small class="text-muted">Strong bonds of friendship and loyalty</small>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="mb-2"><i class="bi bi-lightbulb-fill" style="font-size:1.8rem;color:var(--brand-start);"></i></div>
+          <h6 class="fw-semibold">Innovation</h6>
+          <small class="text-muted">Forward-thinking solutions and progress</small>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="mb-2"><i class="bi bi-hand-thumbs-up-fill" style="font-size:1.8rem;color:var(--brand-start);"></i></div>
+          <h6 class="fw-semibold">Service</h6>
+          <small class="text-muted">Giving back to community and alma mater</small>
         </div>
       </div>
     </div>
