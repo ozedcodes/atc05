@@ -18,29 +18,85 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root { --brand-start: #2563eb; --brand-end: #7c3aed; --muted:#6b7280; --card-bg:#ffffff; }
-    html,body { height:100%; font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto, "Helvetica Neue", Arial; background:#f7fafc; color:#0f1724; }
+    :root {
+      --brand-start: #2563eb;
+      --brand-end: #7c3aed;
+      --muted:#6b7280;
+      --card-bg:#ffffff;
+    }
+    html,body {
+      height:100%;
+      font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto, "Helvetica Neue", Arial;
+      background:#f7fafc;
+      color:#0f1724;
+    }
     .hero {
       background: linear-gradient(120deg, rgba(37,99,235,0.12), rgba(124,58,237,0.06));
       padding:4.5rem 0;
     }
-    .brand-badge { width:48px;height:48px;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800;
-      background:linear-gradient(90deg,var(--brand-start),var(--brand-end));box-shadow:0 10px 30px rgba(37,99,235,0.12); }
-    .card-hover { transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s; }
-    .card-hover:hover { transform:translateY(-6px); box-shadow: 0 18px 40px rgba(15,23,36,0.08); }
-    .stat-pill { border-radius:12px; padding:.9rem 1rem; background:var(--card-bg); box-shadow:0 8px 24px rgba(15,23,36,0.03); }
-    .gradient-cta { background:linear-gradient(90deg,var(--brand-start),var(--brand-end)); color:#fff; }
-    .glass { background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7)); backdrop-filter: blur(6px); border-radius:14px; overflow:hidden; }
-    .img-thumb { object-fit:cover; height:190px; width:100%; border-radius:10px; }
-    footer { background:#0b1220; color:#cbd5e1; }
-    .top-btn { position:fixed; right:20px; bottom:20px; z-index:1050; display:none; }
+    .brand-badge {
+      width:48px;
+      height:48px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-weight:800;
+      background:linear-gradient(90deg,var(--brand-start),var(--brand-end));
+      box-shadow:0 10px 30px rgba(37,99,235,0.12);
+    }
+    .card-hover {
+      transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s;
+    }
+    .card-hover:hover {
+      transform:translateY(-6px);
+      box-shadow: 0 18px 40px rgba(15,23,36,0.08);
+    }
+    .stat-pill {
+      border-radius:12px;
+      padding:.9rem 1rem;
+      background:var(--card-bg);
+      box-shadow:0 8px 24px rgba(15,23,36,0.03);
+    }
+    .gradient-cta {
+      background:linear-gradient(90deg,var(--brand-start),var(--brand-end));
+      color:#fff;
+    }
+    .glass {
+      background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
+      backdrop-filter: blur(6px);
+      border-radius:14px;
+      overflow:hidden;
+    }
+    .img-thumb {
+      object-fit:cover;
+      height:190px;
+      width:100%;
+      border-radius:10px;
+    }
+    footer {
+      background:#0b1220;
+      color:#cbd5e1;
+    }
+    .top-btn {
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:1050;
+      display:none;
+    }
 
     /* Mission & Vision styles */
     .mission-section {
       padding:3.5rem 0;
       background: linear-gradient(180deg, rgba(37,99,235,0.04), rgba(124,58,237,0.02)); /* subtle background */
     }
-    .mission-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; align-items:stretch; }
+    .mission-grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1.25rem;
+      align-items:stretch;
+    }
     .mission-card {
       background:var(--card-bg);
       border-radius:12px;
@@ -55,28 +111,88 @@
       border: 1px solid rgba(2,6,23,0.04);
     }
     .mission-card .icon {
-      width:56px; height:56px; border-radius:12px; display:grid; place-items:center; color:#fff;
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      color:#fff;
       background:linear-gradient(90deg,var(--brand-start),var(--brand-end));
       box-shadow:0 8px 24px rgba(37,99,235,0.12);
       font-size:1.25rem;
     }
-    .mission-card h4 { margin:0; font-weight:700; }
-    .mission-card p { margin:0; color:var(--muted); line-height:1.45; }
+    .mission-card h4 {
+      margin:0;
+      font-weight:700;
+    }
+    .mission-card p {
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .mission-list {
+      margin:0;
+      padding-left:1.25rem;
+      color:var(--muted);
+      line-height:1.75;
+      list-style-type:disc;
+    }
+    .mission-list li {
+      margin-bottom:0.75rem;
+      font-size:0.95rem;
+    }
 
     /* Hover effect for mission cards */
     .mission-card:hover,
     .mission-card:focus-within {
-      transform: translateY(-8px) scale(1.01);
+      transform: translateY(-8px);
       box-shadow: 0 26px 60px rgba(2,6,23,0.12);
       border-color: rgba(37,99,235,0.18);
     }
-    .mission-card:focus-within { outline: none; }
+    .mission-card:focus-within {
+      outline: none;
+      ring: 2px solid var(--brand-start);
+    }
 
     /* small screens */
     @media (max-width:767px) {
-      .mission-grid { grid-template-columns:1fr; }
-      .hero { padding:3rem 0; }
-      .brand-badge { width:44px; height:44px; }
+      .mission-grid {
+        grid-template-columns:1fr;
+      }
+      .hero {
+        padding:3rem 0;
+      }
+      .brand-badge {
+        width:44px;
+        height:44px;
+      }
+    }
+
+    /* Hero responsive image fix */
+    .hero-container {
+      background-image: url(images/2025gtg8.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+    }
+    .hero-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(37,99,235,0.3), rgba(124,58,237,0.2));
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 768px) {
+      .hero-container {
+        background-attachment: scroll;
+      }
     }
   </style>
 </head>
@@ -88,7 +204,7 @@
       <a class="navbar-brand d-flex align-items-center gap-2" href="#">
         <div class="logo"><img src="images/logo.jpg" style="width: 80px; height: 80px; border-radius: 50%;" alt=""></div>
         <div class="d-none d-md-block">
-          <div class="fw-bold">ATC 05SET Alumni</div>
+          <div class="fw-bold">ATC OLD STUDENTS ASSO 05SET</div>
           <small class="">Peace Unity And Progress</small>
         </div>
       </a>
@@ -103,17 +219,18 @@
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
           <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="register.html">Sign up</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="signin.html">Sign in</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="constitution.html">Constitution</a></li>
+          <li class="nav-item"><a class="nav-link" href="signin.html">login</a></li>
         </ul>
       </div>
     </div>
   </nav>
+  <marquee behavior="" direction="left"></marquee>
 
   <!-- HERO -->
   <header id="home" class="hero">
-    <div class="container" style="background-image: url(images/group.jpg);">
+    <div class="container hero-container">
       <div class="row align-items-center gx-4 gy-4">
         <div class="col-lg-6">
           <h1 class="display-6 fw-bold color text-white">ATC 05SET — Reunite, Remember, Rebuild</h1>
@@ -125,17 +242,17 @@
 
           <div class="d-flex flex-wrap gap-3">
             <div class="stat-pill text-center">
-              <div class="h5 mb-0">50+</div>
+              <div class="h5 mb-0">60+</div>
               <small class="">Registered Alumni</small>
             </div>
             <div class="stat-pill text-center">
-              <div class="h5 mb-0">3</div>
+              <div class="h5 mb-0">4</div>
               <small class="">Events Hosted</small>
             </div>
-            <div class="stat-pill text-center">
+            <!-- <div class="stat-pill text-center">
               <div class="h5 mb-0">₦1.2M</div>
               <small class="">Funds Raised</small>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -158,44 +275,83 @@
   </header>
 
   <!-- MISSION & VISION -->
-  <section class="mission-section">
+  <section id="mission-vision" class="mission-section" aria-labelledby="purpose-heading">
     <div class="container">
-      <div class="text-center mb-4">
-        <h2 class="fw-bold">Our Purpose</h2>
-        <p class=" mb-0 fw-bold">What drives ATC 05SET — clear aims that guide our programs and service.</p>
+      <div class="text-center mb-5">
+        <h2 id="purpose-heading" class="fw-bold display-6">Our Mission & Vision</h2>
+        <p class="lead mb-0" style="color:var(--muted);">What we stand for and where we're headed as a community.</p>
       </div>
 
-      <div class="mission-grid mt-4">
-        <div class="mission-card" data-aos="fade-up" data-aos-delay="100" tabindex="0">
-          <div class="d-flex gap-3 align-items-start">
-            <div class="icon"><i class="bi bi-bullseye"></i></div>
-            <div>
-              <h4>Our Mission</h4>
-              <p>
-              <li>To strengthen the bond of friendship and unity among members through regular engagement, transparency, and mutual support.</li>
-              <li>To promote the welfare and development of all members, offering a platform for collaboration, assistance, and empowerment.</li>
-              <li>To support and contribute to the growth of our alma mater through meaningful projects, mentorship, and partnership initiatives.</li>
-              <li>To uphold the values of excellence, integrity, and service that define the ATC spirit.</li>
-              </p>
+      <div class="row g-4 align-items-stretch">
+        <!-- MISSION CARD -->
+        <div class="col-lg-6">
+          <article class="mission-card h-100" role="region" aria-labelledby="mission-heading" data-aos="" data-aos-delay="100">
+            <div class="d-flex gap-3 mb-3">
+              <div class="icon" aria-hidden="true"><i class="bi bi-target"></i></div>
+              <div>
+                <h3 id="mission-heading" class="h5 mb-0">Our Mission</h3>
+              </div>
             </div>
-          </div>
-          <div class="mt-auto">
-            <a href="#events" class="text-decoration-none text-primary">See upcoming initiatives →</a>
-          </div>
+
+            <div class="ps-0 ps-md-5">
+              <ul class="mission-list">
+                <li>Strengthen bonds of friendship and unity through transparent engagement and mutual support</li>
+                <li>Promote member welfare and development via collaboration and empowerment platforms</li>
+                <li>Support our alma mater with meaningful projects, mentorship, and partnerships</li>
+                <li>Uphold excellence, integrity, and service—the foundation of the ATC spirit</li>
+              </ul>
+            </div>
+
+            <div class="mt-4 d-flex gap-2">
+              <a href="#members" class="btn btn-sm btn-outline-primary" aria-label="Join our membership program">Join Membership</a>
+              <a href="#events" class="btn btn-sm btn-link text-decoration-none">View Events →</a>
+            </div>
+          </article>
         </div>
 
-        <div class="mission-card" data-aos="fade-up" data-aos-delay="200" tabindex="0">
-          <div class="d-flex gap-3 align-items-start fw-bold">
-            <div class="icon"><i class="bi bi-eye"></i></div>
-            <div>
-              <h4>Vision Statement</h4>
-              <p>
-To build a united, progressive, and impactful community of ATC 05 Set members — fostering brotherhood, promoting personal and collective growth, and contributing positively to society and our alma mater.</p>
+        <!-- VISION CARD -->
+        <div class="col-lg-6">
+          <article class="mission-card h-100" role="region" aria-labelledby="vision-heading" data-aos="" data-aos-delay="200">
+            <div class="d-flex gap-3 mb-3">
+              <div class="icon" aria-hidden="true"><i class="bi bi-binoculars"></i></div>
+              <div>
+                <h3 id="vision-heading" class="h5 mb-0">Our Vision</h3>
+              </div>
             </div>
-          </div>
-          <div class="mt-auto">
-            <a href="#give" class="text-decoration-none text-primary">Help us achieve this vision →</a>
-          </div>
+
+            <div class="ps-0 ps-md-5">
+              <p class="mb-3" style="color:var(--muted);line-height:1.7;">
+                To build a united, progressive, and impactful community of ATC 05 Set alumni—fostering deep brotherhood, promoting personal and collective growth, and contributing meaningfully to society and our alma mater.
+              </p>
+              <p class="small" style="color:var(--muted);">
+                We envision a legacy of continuous impact, where every member thrives and our collective efforts create lasting positive change.
+              </p>
+            </div>
+
+            <div class="mt-4 d-flex gap-2">
+              <a href="#give" class="btn btn-sm btn-outline-primary" aria-label="Support our initiatives">Support Us</a>
+              <a href="#contact" class="btn btn-sm btn-link text-decoration-none">Get Involved →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Core Values Banner (Optional) -->
+      <div class="row g-3 mt-5 pt-4 border-top border-light">
+        <div class="col-md-4 text-center">
+          <div class="mb-2"><i class="bi bi-heart-fill" style="font-size:1.8rem;color:var(--brand-start);"></i></div>
+          <h6 class="fw-semibold">Brotherhood</h6>
+          <small class="text-muted">Strong bonds of friendship and loyalty</small>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="mb-2"><i class="bi bi-lightbulb-fill" style="font-size:1.8rem;color:var(--brand-start);"></i></div>
+          <h6 class="fw-semibold">Innovation</h6>
+          <small class="text-muted">Forward-thinking solutions and progress</small>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="mb-2"><i class="bi bi-hand-thumbs-up-fill" style="font-size:1.8rem;color:var(--brand-start);"></i></div>
+          <h6 class="fw-semibold">Service</h6>
+          <small class="text-muted">Giving back to community and alma mater</small>
         </div>
       </div>
     </div>
@@ -212,29 +368,29 @@ To build a united, progressive, and impactful community of ATC 05 Set members �
         <a href="#events" class="text-decoration-none text-primary d-none d-sm-inline">See all events →</a>
       </div>
 
-      <div class="row g-4">
+      <!-- <div class="row g-4">
         <div class="col-md-6">
           <div class="card h-100 card-hover">
-            <img src="images/WhatsApp Image 2025-10-24 at 16.58.13_c44be335.jpg" class="card-img-top" alt="">
+            <img src="images/2025gtgflyer.jpg" class="card-img-top" alt="">
             <div class="card-body">
-              <small class="text-primary">Jan, 2026</small>
+              <small class="text-primary">Jan, 3rd 2026</small>
               <h5 class="card-title mt-2">Get-Together 2025</h5>
               <p class="card-text ">Reconnect, worship, and celebrate our achievements.</p>
               <a href="#" class="btn btn-sm btn-outline-primary">RSVP</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="col-md-6">
           <div class="card h-100 card-hover">
-            <img src="images/WhatsApp Image 2025-10-24 at 19.02.17_61c091e3.jpg" style="height: 500px;" class="card-img-top" alt="">
+            <!-- <img src="images/WhatsApp Image 2025-10-24 at 19.02.17_61c091e3.jpg" style="height: 500px;" class="card-img-top" alt="">
             <div class="card-body">
-              <small class="text-primary">Jan 2026</small>
+              <small class="text-primary">Jan, 3rd 2026</small>
               <h5 class="card-title mt-2">Get-Together</h5>
               <p class="card-text ">Lets make this year's reunion one to remember! Dress smart, come early, and don't miss the vibe.</p>
               <a href="#" class="btn btn-sm btn-outline-primary">RSVP</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -327,7 +483,7 @@ To build a united, progressive, and impactful community of ATC 05 Set members �
           <img src="images/IMG_1030.JPG" class="img-thumb" alt="photo1" data-bs-toggle="modal" data-bs-target="#lightbox" data-src="images/IMG_1030.JPG">
         </div>
         <div class="col-6 col-md-3">
-          <img src="images/IMG_1042.JPG" class="img-thumb" alt="photo2" data-bs-toggle="modal" data-bs-target="#lightbox" data-src="images/IMG_1042.JPG">
+          <img src="images/2025gtg5.jpg" class="img-thumb" alt="photo2" data-bs-toggle="modal" data-bs-target="#lightbox" data-src="images/IMG_1042.JPG">
         </div>
         <div class="col-6 col-md-3">
           <img src="images/IMG_20240103_175240.jpg" class="img-thumb" alt="photo3" data-bs-toggle="modal" data-bs-target="#lightbox" data-src="images/IMG_20240103_175240.jpg">
@@ -371,6 +527,69 @@ To build a united, progressive, and impactful community of ATC 05 Set members �
       </div>
     </div>
   </section>
+  <section style="background-color: #fffaf0; padding: 60px 20px;">
+  <div style="max-width: 1GV100px; margin:; text-align: center;">
+    <h3 style="font-size: 2rem; color: #2c3e50; margin-bottom: 10px;">Notable Alumni</h3>
+    <p style="font-size: 1.1rem; color: #555; max-width: 800px; margin: 0 40px;">
+      Meet some of our proudest success stories — alumni who have made outstanding contributions in their fields.
+    </p>
+
+    <!-- Alumni Carousel -->
+    <div id="alumniCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 350px; margin: 0;">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/IMG-20240525-WA0002.jpg" alt="Alumni 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366; color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Engr. Dike Udodiri</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>President at Roxotech Engineering Services Ltd. Eletrical Engineer/Undertakes the construction of powerlines (High Tension & Low Tension) Transformer Substation Installation of all kind, Transformer Repairs, Domestic/Industrial Installation of Eletricity etc.</b></p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/IMG-20250320-WA0012.jpg" alt="Alumni 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Engr. Chikwe Augustine</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>A seasoned mobile importer specializing in all kinds of premium German motors. with years of experience in sourcing, importing, and delivering top-quality vehicles, he is committed to bringing reliability, class, and excellence to every customer.</b></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/IMG_20250822_082903.jpg" alt="Alumni 4" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Mr Faustinus Enwere</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>A dynamic entrepreneur and vissionary business leader. He is the CEO of VickInvestment Mozambique and Tinus Hotels Ltd, where he drives growth through strategic investments, hospitality excellence, and a passion for creating lasting value across industries.</b></p>
+          </div>
+        </div>
+                <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/FB_IMG_1751574196114.jpg" alt="Alumni 4" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Arc. Uzodimma Victor</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>CEO Uzo-Vic Architectural and Building Ventures Nig. Specialise on all kinds of ultra modern Architectural designs, survaying works Drilling of boreholes and Building construction.</b></p>
+          </div>
+        </div>
+                <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/IMG-20250106-WA0001.jpg" alt="Alumni 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Engr. Nwachukwu Ozioma</h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>Passionate Tech entrepreneur with a deep love for technology, design, and spiritual growth. CEO of OzedInnovations.</b></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+            <img src="images/ben3.jpg" alt="Alumni 5" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+            <h4 style="margin-top: 15px; color: #003366;color: #fff !important; border-radius: 30px; background: linear-gradient(90deg, #003366 60%, #ffcc00 100%);  cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">Engr. Benneth Okoro </h4>
+            <p style="font-size: 0.95rem; color: #666;"><b>CEO @ Bencor Electrical Services, a trusted name in Electrical solutions. With expertise in modern Electrical system and passion for excellence. <i> Akukaria Nke Mbu Na Germany.</i></b></p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#alumniCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#alumniCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contact" class="py-5">
@@ -544,84 +763,7 @@ To build a united, progressive, and impactful community of ATC 05 Set members �
   <script>
     // smooth scroll for in-page links and collapse nav on mobile
     document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const href = a.getAttribute('href');
-        if (href.length > 1) {
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-        const navCollapse = document.querySelector('.navbar-collapse');
-        if (navCollapse && navCollapse.classList.contains('show')) {
-          bootstrap.Collapse.getInstance(navCollapse)?.hide();
-        }
-      });
-    });
-
-    // gallery lightbox
-    document.querySelectorAll('[data-bs-target="#lightbox"]').forEach(img => {
-      img.addEventListener('click', (e) => {
-        const src = img.getAttribute('data-src') || img.src;
-        document.getElementById('lightboxImg').src = src;
-      });
-    });
-
-    // back to top button
-    const backBtn = document.getElementById('backTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) backBtn.style.display = 'block'; else backBtn.style.display = 'none';
-    });
-    backBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
-
-    /* js/scripts.js
-   Small, dependency-free helpers:
-   - mobile menu toggle
-   - highlight active nav item
-   - smooth scroll for anchors
-   - simple client-side form validation
-   - lightweight gallery lightbox
-*/
-
-document.addEventListener('DOMContentLoaded', function () {
-  // MOBILE MENU TOGGLE
-  // Create a mobile toggle button dynamically if nav exists
-  const headerInner = document.querySelector('.header-inner');
-  const nav = document.querySelector('.main-nav');
-  if (headerInner && nav) {
-    const btn = document.createElement('button');
-    btn.className = 'mobile-menu-toggle';
-    btn.setAttribute('aria-expanded', 'false');
-    btn.innerHTML = '<span class="sr-only">Menu</span>☰';
-    btn.style.cssText = 'font-size:18px;padding:8px 10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);background:#fff';
-    headerInner.insertBefore(btn, headerInner.children[1]);
-
-    btn.addEventListener('click', function () {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
-      if (nav.classList.contains('open')) {
-        nav.style.maxHeight = nav.scrollHeight + 'px';
-      } else {
-        nav.style.maxHeight = null;
-      }
-    });
-
-    // close menu on resize
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 900 && nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        nav.style.maxHeight = null;
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // ACTIVE NAV LINK (based on filename)
-  try {
-    const path = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.main-nav li').forEach(li => {
+      a.addEventListener('click', (e)
       const a = li.querySelector('a');
       if (!a) return;
       const href = a.getAttribute('href');

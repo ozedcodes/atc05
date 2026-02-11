@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sign up — ATC 05SET Alumni</title>
+  <title>Sign up — ATC OLD STUDENTS ASSO 05SET</title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -41,6 +41,35 @@
   </style>
 </head>
 <body>
+   <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-primary border-bottom sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <div class="logo"><img src="images/logo.jpg" style="width: 80px; height: 80px; border-radius: 50%;" alt=""></div>
+        <div class="d-none d-md-block">
+          <div class="fw-bold">ATC OLD STUDENTS ASSO 05SET</div>
+          <small class="">Peace Unity And Progress</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="constitution.html">Constitution</a></li>
+          <li class="nav-item"><a class="nav-link" href="signin.html">login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <main class="hero-wrap">
     <div class="container">
       <div class="row gx-5 align-items-center">
@@ -49,7 +78,7 @@
           <div class="d-flex align-items-center gap-3 mb-3">
             <div class="brand-mark">ATC</div>
             <div>
-              <div style="font-weight:700">ATC 05SET Alumni</div>
+              <div style="font-weight:700">ATC OLD STUDENTS ASSO 05SET</div>
               <small class="small-muted">Peace Unity and Progress — Join the community</small>
             </div>
           </div>
@@ -159,7 +188,7 @@
               </div>
             </form>
 
-            <div class="footer-note">Already have an account? <a href="login.html">Sign in</a></div>
+            <div class="footer-note">Already have an account? <a href="login.php">Sign in</a></div>
           </div>
         </div>
       </div>
@@ -167,8 +196,8 @@
   </main>
 
   <!-- Toast (success) -->
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1200">
-    <div id="signupToast" class="toast align-items-center text-white" role="status" aria-live="polite" aria-atomic="true">
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1200; background-color: green;">
+    <div id="signupToast" class="toast align-items-center text-green" role="status" aria-live="polite" aria-atomic="true">
       <div class="d-flex">
         <div class="toast-body">Account created — check your email for verification.</div>
         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
